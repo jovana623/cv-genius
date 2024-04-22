@@ -1,0 +1,19 @@
+@import "../abstract/variables.scss";
+
+.template {
+  display: flex;
+  flex-direction: column;
+  background-color: $extra-light-gray;
+  gap: 1rem;
+  padding: 1rem 2rem;
+
+  &__preview {
+    align-self: flex-end;
+  }
+
+  &__resume {
+    grid-column: 2;
+    grid-row: 1;
+    height: 80vh;
+  }
+}

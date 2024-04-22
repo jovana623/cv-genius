@@ -1,0 +1,25 @@
+@import "../abstract/variables.scss";
+
+.preview__btn {
+  background-color: $extra-light-gray;
+  display: flex;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: $color-light-gray;
+  padding: 0.2rem 0.4rem;
+  align-items: center;
+  border: none;
+
+  &--icon {
+    color: $color-light-blue;
+  }
+
+  &--text {
+    text-decoration: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
