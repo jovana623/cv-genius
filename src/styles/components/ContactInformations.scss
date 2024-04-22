@@ -1,0 +1,15 @@
+@import "../abstract/variables.scss";
+
+.contact--container {
+  margin-right: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $color-light-gray;
+
+  & h3 {
+    font-weight: 300;
+    color: $color-dark-gray;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-top: 3rem;
+  }
+}

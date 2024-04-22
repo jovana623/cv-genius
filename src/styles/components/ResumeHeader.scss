@@ -1,0 +1,21 @@
+@import "../abstract/variables.scss";
+
+.header__info {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $color-light-gray;
+  text-transform: uppercase;
+
+  &--firstname {
+    font-size: 2rem;
+  }
+
+  &--lastname {
+    font-size: 2rem;
+  }
+
+  &--occupation {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
