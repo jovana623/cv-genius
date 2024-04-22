@@ -1,5 +1,6 @@
 import "../../styles/components/Resume.scss";
 import ContactInformations from "../contact/ContactInformations";
+import SkillsInformations from "../skills/SkillsInformations";
 import ResumeHeader from "./ResumeHeader";
 
 function Resume() {
@@ -11,7 +12,7 @@ function Resume() {
       <div className="resume__main-info">
         <div className="resume__side--left">
           <ContactInformations />
-          <p>Skill</p>
+          <SkillsInformations />
           <p>Languages</p>
         </div>
         <div className="resume__side--right">
