@@ -1,0 +1,15 @@
+@import "../abstract/variables.scss";
+
+.objective__container {
+  margin-right: 2rem;
+  padding-bottom: 15px;
+  border-bottom: 1px solid $color-light-gray;
+
+  &--title {
+    font-weight: 300;
+    color: $color-dark-gray;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-top: 30px;
+  }
+}

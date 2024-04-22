@@ -1,0 +1,25 @@
+@import "../abstract/variables.scss";
+
+.information__list {
+  padding-bottom: 2rem;
+  list-style-type: none;
+}
+
+.list__item {
+  padding-bottom: 0.8rem;
+
+  &--title {
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: $color-dark-gray;
+  }
+
+  &--subtitle {
+    font-weight: 600;
+    color: $color-dark-gray;
+  }
+
+  &--description {
+    margin-top: 1rem;
+  }
+}
