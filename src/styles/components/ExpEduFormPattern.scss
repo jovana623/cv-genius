@@ -1,0 +1,24 @@
+@import "../abstract/variables.scss";
+
+.btn__submit--container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn__submit {
+  background-color: $color-white;
+  border: none;
+  text-transform: uppercase;
+  color: $color-light-blue;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid $color-light-blue;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  margin-left: auto;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-light-blue;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../abstract/variables.scss";
+
+.form__skills {
+  display: flex;
+
+  &--field {
+    width: 80%;
+    padding: 2rem 0;
+    padding-left: 1rem;
+    margin-bottom: 4rem;
+    border: none;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background-color: $extra-light-gray;
+    display: block;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $color-light-blue;
+      background-color: $color-white;
+    }
+  }
+
+  &--btn {
+    border: none;
+    padding: 20px 40px;
+    align-self: flex-start;
+    background-color: $color-slate-gray;
+    color: $color-graphite-gray;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: 600;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-iron-gray;
+    }
+  }
+}

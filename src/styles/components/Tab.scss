@@ -1,0 +1,67 @@
+@import "../abstract/variables.scss";
+
+.tab {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  box-shadow: rgba($color-black, 0.16) 0px 1px 4px;
+  background-color: $color-show-white;
+  transition: all 0.3s;
+  margin-left: 1px;
+
+  &:hover {
+    box-shadow: rgba($color-black, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    cursor: pointer;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    font-weight: 300;
+    font-size: 1.4rem;
+
+    &--title {
+      padding-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: $color-steel-gray;
+    }
+
+    &--other {
+      display: flex;
+      gap: 3px;
+      color: $color-slate-gray;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 1.5rem;
+    color: $color-steel-gray;
+    transition: all 0.3s ease;
+
+    &--pencil {
+      width: 2rem;
+      height: 2rem;
+      background-color: transparent;
+
+      &:hover {
+        box-shadow: 0 0 12px rgba(150, 150, 150, 0.5);
+      }
+    }
+
+    &--trash {
+      width: 2rem;
+      height: 2rem;
+
+      &:hover {
+        box-shadow: 0 0 12px rgba(150, 150, 150, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "../abstract/variables.scss";
+
+.add__container {
+  margin-top: 2rem;
+  width: 100%;
+  border: 1px dashed $color-light-blue;
+
+  &--btn {
+    display: flex;
+    background-color: $color-white;
+    width: 100%;
+    padding: 2rem;
+    color: $color-light-blue;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.8rem;
+    align-items: center;
+    border: none;
+    gap: 1rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

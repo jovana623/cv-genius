@@ -1,0 +1,20 @@
+@import "../abstract/variables.scss";
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+
+  &__name {
+    width: 55%;
+  }
+}
+
+.btn--add-fields {
+  border: none;
+  background-color: $color-white;
+  margin-bottom: 1rem;
+  color: $color-light-blue;
+  font-size: 1.6rem;
+  font-weight: 600;
+}

@@ -1,0 +1,49 @@
+@import "../abstract/variables.scss";
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 10rem;
+  width: 38%;
+  background-color: $color-white;
+  padding: 3rem 10rem;
+  box-shadow: 0px -5px 5px -5px rgba($color-black, 0.2);
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__btn {
+    border: none;
+    font-size: 16px;
+
+    &--prev {
+      background-color: $color-white;
+      color: $color-dark-blue-1;
+      font-weight: 600;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $color-dark-blue-2;
+      }
+    }
+
+    &--next {
+      background-color: $color-light-red;
+      border: none;
+      border-radius: 2rem;
+      color: $color-white;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      margin-left: auto;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-dark-red;
+      }
+    }
+  }
+}

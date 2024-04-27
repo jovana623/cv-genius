@@ -1,0 +1,27 @@
+@import "../abstract/variables.scss";
+
+.form__container {
+  margin-left: 10rem;
+  padding-top: 2rem;
+  padding-right: 10rem;
+  padding-bottom: 20rem;
+  overflow-y: scroll;
+
+  &--title {
+    margin-bottom: 2rem;
+    color: $color-dark-gray;
+    font-size: 3.4rem;
+  }
+
+  &--subtitle {
+    margin-bottom: 3rem;
+    color: $color-light-gray;
+    font-size: 1.6rem;
+  }
+
+  &--two-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}

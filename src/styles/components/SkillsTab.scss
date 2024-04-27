@@ -1,0 +1,27 @@
+@import "../abstract/variables.scss";
+
+.tab__container {
+  padding: 1rem;
+  background-color: $color-light-blue;
+  color: $color-white;
+  border-radius: 4rem;
+  display: inline-flex;
+  gap: 2rem;
+  align-items: center;
+  width: auto;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+
+  &--text {
+    font-size: 1.6rem;
+  }
+
+  &--icon {
+    width: 2rem;
+    height: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
