@@ -4,7 +4,7 @@ import ExperenceInformations from "../experence/ExperenceInformations";
 import LanguageInformations from "../languages/LanguageInformations";
 import ObjectiveInformations from "../objective/ObjectiveInformations";
 import SkillsInformations from "../skills/SkillsInformations";
-import ResumeHeader from "./ResumeHeader";
+import ResumeHeader from "../contact/Profile";
 
 function Resume() {
   const frontendDeveloper = [

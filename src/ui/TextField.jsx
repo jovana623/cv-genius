@@ -1,7 +1,10 @@
 import "../styles/components/TextField.scss";
 
 /* eslint-disable react/prop-types */
-function TextField({ children, name }) {
+function TextField({ children, name, onChange }) {
+  function handleChange(e) {
+    onChange(e.target.value);
+  }
   return (
     <input
       type="text"
@@ -9,6 +12,7 @@ function TextField({ children, name }) {
       name={name}
       placeholder={children}
       className="field__text"
+      onChange={handleChange}
     />
   );
 }
