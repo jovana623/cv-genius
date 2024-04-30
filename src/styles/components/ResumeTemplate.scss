@@ -6,6 +6,11 @@
   background-color: $extra-light-gray;
   gap: 1rem;
   padding: 1rem 2rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   &__preview {
     align-self: flex-end;
