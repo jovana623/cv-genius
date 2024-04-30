@@ -11,14 +11,25 @@
   width: auto;
   margin-right: 1rem;
   margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  padding-right: 0.5rem;
+
+  &--btn {
+    border: none;
+    background-color: transparent;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &--text {
     font-size: 1.6rem;
   }
 
   &--icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 
     &:hover {
       cursor: pointer;

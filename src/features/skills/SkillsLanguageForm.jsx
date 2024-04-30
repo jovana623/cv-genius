@@ -6,9 +6,9 @@ import SkillsTab from "./SkillsTab";
 import LanguageForm from "../languages/LanguageForm";
 import LanguagesTab from "../languages/LanguagesTab";
 import AddFormContainer from "../../ui/AddFormContainer";
+import { useSelector } from "react-redux";
 
-const initialSkills = ["JavaScript", "React", "HTML & CSS"];
-export const initialLanguages = [
+const initialLanguages = [
   {
     name: "French",
     level: "Advanced",
@@ -18,6 +18,7 @@ export const initialLanguages = [
 
 function SkillsLanguageForm() {
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const skillsList = useSelector((state) => state.skills);
 
   function handleFormSubmit() {
     setIsFormVisible(false);
@@ -38,8 +39,8 @@ function SkillsLanguageForm() {
           </p>
           <Skills />
           <div className="skill__list">
-            {initialSkills.map((skill, index) => (
-              <SkillsTab key={index} skill={skill} />
+            {skillsList.map((skill) => (
+              <SkillsTab key={skill.id} skill={skill} />
             ))}
           </div>
         </>
