@@ -1,9 +1,12 @@
 import "../styles/components/TextField.scss";
+import { forwardRef } from "react";
 
 /* eslint-disable react/prop-types */
-function TextField({ children, name, onChange }) {
+const TextField = forwardRef(({ children, name, onChange }, ref) => {
   function handleChange(e) {
-    onChange(e.target.value);
+    if (onChange) {
+      onChange(e.target.value);
+    }
   }
   return (
     <input
@@ -13,8 +16,10 @@ function TextField({ children, name, onChange }) {
       placeholder={children}
       className="field__text"
       onChange={handleChange}
+      ref={ref}
     />
   );
-}
+});
 
+TextField.displayName = "TextField";
 export default TextField;

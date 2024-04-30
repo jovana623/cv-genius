@@ -45,6 +45,11 @@
     color: $color-steel-gray;
     transition: all 0.3s ease;
 
+    &--btn {
+      background-color: transparent;
+      border: none;
+    }
+
     &--pencil {
       width: 2rem;
       height: 2rem;

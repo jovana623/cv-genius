@@ -4,6 +4,8 @@ import "../../styles/layout/FormLayout.scss";
 import ExpEduFormPattern from "../../ui/ExpEduFormPattern";
 import Tab from "../../ui/Tab";
 import AddFormContainer from "../../ui/AddFormContainer";
+import { useDispatch, useSelector } from "react-redux";
+import { addExperience, deleteExperence } from "./experienceSlice";
 
 const fieldNames = [
   "Title/Position",
@@ -12,22 +14,18 @@ const fieldNames = [
   "Description",
 ];
 
-const initialExperence = [
-  {
-    title: "Frontend Developer",
-    subtitle: "Meta",
-    location: "San Francisco",
-    startDate: "May 2017",
-    endDate: "September 2022",
-    description: "Some description goes here",
-  },
-];
-
 function ExperenceForm() {
   const [isFormVisible, setIsFormVisible] = useState(true);
+  const experenceList = useSelector((state) => state.experience);
+  const dispatch = useDispatch();
 
-  function handleFormSubmit() {
+  function handleFormSubmit(data) {
     setIsFormVisible(false);
+    dispatch(addExperience(data));
+  }
+
+  function handleDelete(id) {
+    dispatch(deleteExperence(id));
   }
 
   return (
@@ -46,8 +44,8 @@ function ExperenceForm() {
         />
       ) : (
         <div>
-          {initialExperence.map((experience, index) => (
-            <Tab key={index} array={experience} />
+          {experenceList.map((experience, index) => (
+            <Tab key={index} data={experience} onDelete={handleDelete} />
           ))}
           <AddFormContainer onClick={() => setIsFormVisible(!isFormVisible)}>
             Experence

@@ -1,0 +1,13 @@
+@import "../abstract/variables.scss";
+
+.education__container {
+  margin-right: 2rem;
+
+  &--title {
+    font-weight: 300;
+    color: $color-dark-gray;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-top: 3rem;
+  }
+}

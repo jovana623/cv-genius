@@ -46,7 +46,7 @@ function EducationForm() {
       ) : (
         <div>
           {initialEducation.map((education, index) => (
-            <Tab key={index} array={education} />
+            <Tab key={index} data={education} />
           ))}
           <AddFormContainer onClick={() => setIsFormVisible(!isFormVisible)}>
             Education

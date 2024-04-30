@@ -3,21 +3,31 @@ import { CiTrash } from "react-icons/ci";
 import { LuPencilLine } from "react-icons/lu";
 
 /* eslint-disable react/prop-types */
-function Tab({ array }) {
+function Tab({ data, onDelete }) {
+  console.log(data);
+
+  const handleDelete = () => {
+    onDelete(data.id);
+  };
+
   return (
     <div className="tab">
       <div className="tab__details">
-        <h3 className="tab__details--title">{array.title}</h3>
+        <h3 className="tab__details--title">{data.title}</h3>
         <div className="tab__details--other">
-          <p className="tab__details--other--subtitle">{array.subtitle}</p>
+          <p className="tab__details--other--subtitle">{data.subtitle}</p>
           <span>
-            &#183; {array.startDate} - {array.endDate}
+            &#183; {data.startDate} - {data.endDate}
           </span>
         </div>
       </div>
       <div className="tab__menu">
-        <LuPencilLine className="tab__menu--pencil" />
-        <CiTrash className="tab__menu--trash" />
+        <button className="tab__menu--btn">
+          <LuPencilLine className="tab__menu--pencil" />
+        </button>
+        <button className="tab__menu--btn" onClick={handleDelete}>
+          <CiTrash className="tab__menu--trash" />
+        </button>
       </div>
     </div>
   );
