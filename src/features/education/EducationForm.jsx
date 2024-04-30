@@ -3,6 +3,8 @@ import "../../styles/layout/FormLayout.scss";
 import ExpEduFormPattern from "../../ui/ExpEduFormPattern";
 import Tab from "../../ui/Tab";
 import AddFormContainer from "../../ui/AddFormContainer";
+import { useDispatch, useSelector } from "react-redux";
+import { addEducation, deleteEducation } from "./educationSlice";
 
 const fieldNames = [
   "Degree(s)",
@@ -11,22 +13,18 @@ const fieldNames = [
   "Description",
 ];
 
-export const initialEducation = [
-  {
-    title: "Bachelor CS",
-    subtitle: "MIT",
-    location: "Massachusetts",
-    startDate: "September 2014",
-    endDate: "May 2017",
-    description: "Some description for education goes here",
-  },
-];
-
 function EducationForm() {
   const [isFormVisible, setIsFormVisible] = useState(true);
+  const educationList = useSelector((state) => state.education);
+  const dispatch = useDispatch();
 
-  function handleFormSubmit() {
+  function handleFormSubmit(data) {
     setIsFormVisible(false);
+    dispatch(addEducation(data));
+  }
+
+  function handleDelete(id) {
+    dispatch(deleteEducation(id));
   }
 
   return (
@@ -45,8 +43,8 @@ function EducationForm() {
         />
       ) : (
         <div>
-          {initialEducation.map((education, index) => (
-            <Tab key={index} data={education} />
+          {educationList.map((education, index) => (
+            <Tab key={index} data={education} onDelete={handleDelete} />
           ))}
           <AddFormContainer onClick={() => setIsFormVisible(!isFormVisible)}>
             Education

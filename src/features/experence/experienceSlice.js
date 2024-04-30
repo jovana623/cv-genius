@@ -21,10 +21,7 @@ const experenceSlice = createSlice({
       state.push(newExperence);
     },
     deleteExperence(state, action) {
-      const experienceIdToDelete = action.payload;
-      return state.filter(
-        (experience) => experience.id !== experienceIdToDelete
-      );
+      return state.filter((experience) => experience.id !== action.payload);
     },
   },
 });
