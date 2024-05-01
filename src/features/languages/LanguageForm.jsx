@@ -1,24 +1,43 @@
 import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/LanguageForm.scss";
-import TextField from "../../ui/TextField";
+import "../../styles/components/TextField.scss";
 import LanguageLevelBox from "./LanguageLevelBox";
 import { FaBookReader } from "react-icons/fa";
 import { FaPeopleArrows } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
 import { FaTrophy } from "react-icons/fa6";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addLanguage } from "./languageSlice";
+import { v4 as uuidv4 } from "uuid";
 
 /* eslint-disable react/prop-types */
-function LanguageForm({ onSubmit }) {
+function LanguageForm({ onFormSubmit }) {
   const [languageLevel, setLanguageLevel] = useState(null);
+  const dispath = useDispatch();
 
   function handleLanguageLevelClick(text) {
     setLanguageLevel(text);
   }
 
+  const { register, handleSubmit } = useForm();
+
+  function onSubmit(data) {
+    const newLanguage = { id: uuidv4, level: languageLevel, ...data };
+    dispath(addLanguage(newLanguage));
+    console.log(newLanguage);
+    onFormSubmit();
+  }
+
   return (
-    <form>
-      <TextField name="language">Language</TextField>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        className="field__text"
+        placeholder="Language"
+        {...register("name")}
+      />
       <p className="ability-text">Ability level</p>
       <div className="ability-fields">
         <LanguageLevelBox
@@ -49,13 +68,15 @@ function LanguageForm({ onSubmit }) {
       <p className="ability-text">
         Have you done any courses or got any certificates?
       </p>
-      <TextField name="course">Course or certificate</TextField>
+      <input
+        type="text"
+        className="field__text"
+        placeholder="Course or certificate"
+        {...register("certificate")}
+      />
+
       <div className="btn__container">
-        <button
-          className="btn__container--save"
-          type="submit"
-          onClick={onSubmit}
-        >
+        <button className="btn__container--save" type="submit">
           Save
         </button>
       </div>

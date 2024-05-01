@@ -10,7 +10,7 @@ function SkillsTab({ skill }) {
   function handleDelete() {
     dispatch(deleteSkill(skill.id));
   }
-  console.log(skill);
+
   return (
     <div className="tab__container">
       <p className="tab__container--text">{skill.name}</p>

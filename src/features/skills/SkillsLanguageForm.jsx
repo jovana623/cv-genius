@@ -8,23 +8,14 @@ import LanguagesTab from "../languages/LanguagesTab";
 import AddFormContainer from "../../ui/AddFormContainer";
 import { useSelector } from "react-redux";
 
-const initialLanguages = [
-  {
-    name: "French",
-    level: "Advanced",
-    certificate: "French certificate",
-  },
-];
-
 function SkillsLanguageForm() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const skillsList = useSelector((state) => state.skills);
+  const languageList = useSelector((state) => state.language);
 
   function handleFormSubmit() {
     setIsFormVisible(false);
   }
-
-  console.log(handleFormSubmit);
 
   return (
     <div className="form__container">
@@ -51,11 +42,11 @@ function SkillsLanguageForm() {
         than one language).
       </p>
       {isFormVisible ? (
-        <LanguageForm onSumbit={handleFormSubmit} />
+        <LanguageForm onFormSubmit={handleFormSubmit} />
       ) : (
         <>
-          {initialLanguages.map((language, index) => (
-            <LanguagesTab key={index} language={language} />
+          {languageList.map((language) => (
+            <LanguagesTab key={language.id} language={language} />
           ))}
           <AddFormContainer onClick={() => setIsFormVisible(!isFormVisible)}>
             Language

@@ -1,9 +1,17 @@
 import "../../styles/components/LanguagesTab.scss";
 import { CiTrash } from "react-icons/ci";
 import { LuPencilLine } from "react-icons/lu";
+import { useDispatch } from "react-redux";
+import { deleteLanguage } from "./languageSlice";
 
 /* eslint-disable react/prop-types */
 function LanguagesTab({ language }) {
+  const dispatch = useDispatch();
+
+  function handleDelete() {
+    dispatch(deleteLanguage(language.id));
+  }
+
   return (
     <div className="tab">
       <div className="tab__info">
@@ -14,8 +22,12 @@ function LanguagesTab({ language }) {
         </div>
       </div>
       <div className="tab__menu">
-        <CiTrash className="tab__menu--trash" />
-        <LuPencilLine className="tab__menu--pencil" />
+        <button className="tab__menu--btn">
+          <LuPencilLine className="tab__menu--pencil" />
+        </button>
+        <button className="tab__menu--btn" onClick={handleDelete}>
+          <CiTrash className="tab__menu--trash" />
+        </button>
       </div>
     </div>
   );
