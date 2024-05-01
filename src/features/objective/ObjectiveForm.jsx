@@ -1,7 +1,11 @@
 import "../../styles/layout/FormLayout.scss";
-import TextField from "../../ui/TextField";
+import "../../styles/components/TextField.scss";
+import { useDispatch } from "react-redux";
+import { changeObjective } from "./objectiveSlice";
 
 function ObjectiveForm() {
+  const dispatch = useDispatch();
+
   return (
     <div className="form__container">
       <h1 className="form__container--title">
@@ -11,7 +15,11 @@ function ObjectiveForm() {
         This appears near the top of your resume. Impress employers with a
         strong opening statement that sums up your strengths and experience.
       </p>
-      <TextField name="objective">Objective</TextField>
+      <input
+        type="text"
+        className="field__text"
+        onChange={(e) => dispatch(changeObjective(e.target.value))}
+      />
     </div>
   );
 }
