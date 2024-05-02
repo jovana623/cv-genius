@@ -1,0 +1,79 @@
+@import "../abstract/variables.scss";
+
+@mixin label-active() {
+  font-size: 1.5rem;
+  transform: translateY(-14px);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 2rem;
+
+  &--is-active {
+    .form-field__control {
+      &::after {
+        border-bottom: 2px solid $color-light-blue;
+        transform: scaleX(150);
+      }
+    }
+    .form-field__label {
+      color: $color-light-blue;
+      @include label-active();
+    }
+  }
+  &--is-filled {
+    .form-field__label {
+      @include label-active();
+    }
+  }
+}
+.form-field__label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: normal;
+  left: 0;
+  margin: 0;
+  padding: 18px 12px 0;
+  position: absolute;
+  top: 0;
+  transition: all $animation-duration;
+  width: 100%;
+  color: $color-slate-gray;
+}
+
+.form-field__control {
+  background: #eee;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    border-bottom: 2px solid $color-light-blue;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transform: scaleX(0);
+    transition: all $animation-duration;
+    width: 1%;
+  }
+}
+.form-field__input,
+.form-field__textarea {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 24px;
+  outline: 0;
+  padding: 0 12px 15px 12px;
+  width: 100%;
+}
+.form-field__textarea {
+  height: 150px;
+}

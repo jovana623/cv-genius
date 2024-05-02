@@ -1,6 +1,6 @@
 import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/ContactForm.scss";
-import TextField from "../../ui/TextField";
+import "../../styles/layout/InputFieldLayout.scss";
 import { useState } from "react";
 import AdditionalFields from "./AdditionalFields";
 import { useDispatch } from "react-redux";
@@ -12,6 +12,7 @@ import {
   changeOccupation,
   changePhone,
 } from "./contactSlice";
+import InputField from "../../ui/InputField";
 
 function ContactForm() {
   const [showAdditionalField, setShowAdditionalFields] = useState(false);
@@ -32,46 +33,41 @@ function ContactForm() {
       </p>
       <div className="details">
         <div className="details__name">
-          <TextField
+          <InputField
             name="firstName"
+            label="First Name"
             onChange={(value) => dispatch(changeFirstName(value))}
-          >
-            First Name
-          </TextField>
-          <TextField
+          />
+          <InputField
             name="lastName"
+            label="Last Name"
             onChange={(value) => dispatch(changeLastName(value))}
-          >
-            Last Name
-          </TextField>
+          />
         </div>
         <div>Profile photo</div>
       </div>
-      <TextField
+      <InputField
         name="occupation"
+        label="Occupation"
         onChange={(value) => dispatch(changeOccupation(value))}
-      >
-        Occupation
-      </TextField>
-      <TextField
+      />
+      <InputField
         name="email"
+        label="Email"
         onChange={(value) => dispatch(changeEmail(value))}
-      >
-        Email
-      </TextField>
+      />
+
       <div className="form__container--two-rows">
-        <TextField
+        <InputField
           name="address"
+          label="Address"
           onChange={(value) => dispatch(changeAddress(value))}
-        >
-          Address
-        </TextField>
-        <TextField
+        />
+        <InputField
           name="phone"
+          label="Phone"
           onChange={(value) => dispatch(changePhone(value))}
-        >
-          Phone
-        </TextField>
+        />
       </div>
       <button
         onClick={(e) => handleAdditionalFieldsToggle(e)}
