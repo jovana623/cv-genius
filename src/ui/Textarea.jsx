@@ -2,28 +2,28 @@ import useFormField from "../hooks/useFormField";
 import "../styles/components/InputField.scss";
 
 /* eslint-disable react/prop-types */
-function InputField({ name, label, onChange, register }) {
+function Textarea({ name, label, onChange, register }) {
   useFormField();
 
   function handleChange(e) {
     onChange(e.target.value);
   }
+
   return (
     <div className="form-field">
       <div className="form-field__control">
         <label htmlFor={name} className="form-field__label">
           {label}
         </label>
-        <input
+        <textarea
           id={name}
-          type="text"
-          className="form-field__input"
+          className="form-field__textarea"
           onChange={handleChange}
           {...(register && register(name))}
-        />
+        ></textarea>
       </div>
     </div>
   );
 }
 
-export default InputField;
+export default Textarea;

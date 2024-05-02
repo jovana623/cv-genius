@@ -2,6 +2,7 @@ import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/TextField.scss";
 import { useDispatch } from "react-redux";
 import { changeObjective } from "./objectiveSlice";
+import Textarea from "../../ui/Textarea";
 
 function ObjectiveForm() {
   const dispatch = useDispatch();
@@ -18,6 +19,11 @@ function ObjectiveForm() {
       <input
         type="text"
         className="field__text"
+        onChange={(e) => dispatch(changeObjective(e.target.value))}
+      />
+      <Textarea
+        name="objective"
+        label="Objective"
         onChange={(e) => dispatch(changeObjective(e.target.value))}
       />
     </div>
