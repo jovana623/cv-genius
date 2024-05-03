@@ -1,6 +1,5 @@
 import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/LanguageForm.scss";
-import "../../styles/components/TextField.scss";
 import LanguageLevelBox from "./LanguageLevelBox";
 import InputField from "../../ui/InputField";
 import { FaBookReader } from "react-icons/fa";

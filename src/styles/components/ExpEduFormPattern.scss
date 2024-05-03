@@ -22,3 +22,17 @@
     cursor: pointer;
   }
 }
+
+.end-date {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.present-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  color: $color-dark-gray;
+}

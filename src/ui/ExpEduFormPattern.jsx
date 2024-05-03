@@ -1,18 +1,28 @@
 import "../styles/components/ExpEduFormPattern.scss";
 import "../styles/layout/FormLayout.scss";
-import "../styles/components/TextField.scss";
+import "../styles/layout/CalendarField.scss";
 import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 import InputField from "../ui/InputField";
 import Textarea from "./Textarea";
+import { useState } from "react";
 
 /* eslint-disable react/prop-types */
 function ExpEduFormPattern({ fieldNames, onSuccess }) {
   const { register, handleSubmit } = useForm();
+  const [checkPresent, setCheckPresent] = useState(false);
 
   function onSubmit(data) {
-    const newData = { id: uuidv4(), ...data };
+    let newData = { id: uuidv4(), ...data };
+    if (checkPresent) {
+      newData.endDate = "present";
+    }
     onSuccess(newData);
+    console.log(newData);
+  }
+
+  function handleCheck() {
+    setCheckPresent((check) => !check);
   }
 
   return (
@@ -33,10 +43,18 @@ function ExpEduFormPattern({ fieldNames, onSuccess }) {
           <input
             type="month"
             className="field__text"
+            disabled={checkPresent}
             {...register("endDate")}
           />
-          <input type="checkbox" id="present" />
-          <label htmlFor="present">Present</label>
+          <div className="present-date">
+            <input
+              type="checkbox"
+              id="present"
+              onChange={handleCheck}
+              className="present-checkbox"
+            />
+            <label htmlFor="present">Present</label>
+          </div>
         </div>
       </div>
       <Textarea name="description" label={fieldNames[3]} register={register} />

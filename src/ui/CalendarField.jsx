@@ -1,4 +1,4 @@
-import "../styles/components/TextField.scss";
+import "../styles/layout/CalendarField.scss";
 
 /* eslint-disable react/prop-types */
 function CalendarField({ children, name, onChange }) {

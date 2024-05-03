@@ -9,7 +9,6 @@ function Tab({ data, onDelete }) {
   const handleDelete = () => {
     onDelete(data.id);
   };
-  console.log(handleDelete);
 
   return (
     <div className="tab">
