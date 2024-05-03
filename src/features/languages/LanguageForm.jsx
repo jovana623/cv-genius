@@ -2,6 +2,7 @@ import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/LanguageForm.scss";
 import "../../styles/components/TextField.scss";
 import LanguageLevelBox from "./LanguageLevelBox";
+import InputField from "../../ui/InputField";
 import { FaBookReader } from "react-icons/fa";
 import { FaPeopleArrows } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa6";
@@ -32,12 +33,7 @@ function LanguageForm({ onFormSubmit }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        className="field__text"
-        placeholder="Language"
-        {...register("name")}
-      />
+      <InputField name="name" label="Language" register={register} />
       <p className="ability-text">Ability level</p>
       <div className="ability-fields">
         <LanguageLevelBox
@@ -68,11 +64,11 @@ function LanguageForm({ onFormSubmit }) {
       <p className="ability-text">
         Have you done any courses or got any certificates?
       </p>
-      <input
-        type="text"
-        className="field__text"
-        placeholder="Course or certificate"
-        {...register("certificate")}
+
+      <InputField
+        name="certificate"
+        label="Course or certificate"
+        register={register}
       />
 
       <div className="btn__container">

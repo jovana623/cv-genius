@@ -29,7 +29,15 @@ function ExpEduFormPattern({ fieldNames, onSuccess }) {
           className="field__text"
           {...register("startDate")}
         />
-        <input type="month" className="field__text" {...register("endDate")} />
+        <div className="end-date">
+          <input
+            type="month"
+            className="field__text"
+            {...register("endDate")}
+          />
+          <input type="checkbox" id="present" />
+          <label htmlFor="present">Present</label>
+        </div>
       </div>
       <Textarea name="description" label={fieldNames[3]} register={register} />
 

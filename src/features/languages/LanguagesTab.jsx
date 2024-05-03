@@ -3,6 +3,8 @@ import { CiTrash } from "react-icons/ci";
 import { LuPencilLine } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 import { deleteLanguage } from "./languageSlice";
+import Modal from "../../ui/Modal";
+import DeleteWindow from "../../ui/DeleteWindow";
 
 /* eslint-disable react/prop-types */
 function LanguagesTab({ language }) {
@@ -25,9 +27,17 @@ function LanguagesTab({ language }) {
         <button className="tab__menu--btn">
           <LuPencilLine className="tab__menu--pencil" />
         </button>
-        <button className="tab__menu--btn" onClick={handleDelete}>
-          <CiTrash className="tab__menu--trash" />
-        </button>
+
+        <Modal>
+          <Modal.Open opens="delete-language">
+            <button className="tab__menu--btn">
+              <CiTrash className="tab__menu--trash" />
+            </button>
+            <Modal.Window name="delete-language">
+              <DeleteWindow onConfirm={handleDelete} />
+            </Modal.Window>
+          </Modal.Open>
+        </Modal>
       </div>
     </div>
   );
