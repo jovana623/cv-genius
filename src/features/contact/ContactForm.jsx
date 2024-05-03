@@ -26,10 +26,10 @@ function ContactForm() {
 
   return (
     <form className="form__container">
-      <h1 className="form__container--title">Tell us about yourself</h1>
+      <h1 className="form__container--title">Give a brief self-introduction</h1>
       <p className="form__container--subtitle">
-        Let us know who you are, how employers can get in touch with you, and
-        what your profession is.
+        Tell us a bit about yourself, how employers can contact you, and what
+        you do for a living.
       </p>
       <div className="details">
         <div className="details__name">

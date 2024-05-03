@@ -1,24 +1,25 @@
-import { useSelector } from "react-redux";
 import "../styles/components/ProgressHeader.scss";
 
-function ProgressHeader() {
-  const { currentIndex } = useSelector((state) => state.navigation);
+function TestComponent() {
   return (
-    <div className="progress">
-      <div className="progress__logo-steps">
-        <img src="/logo-cv-genius.png" alt="logo" className="progress__logo" />
-        <div className="progress__steps">
-          <p>Step {currentIndex} of 5</p>
-          <h2>Contact informations</h2>
-        </div>
-      </div>
-      <progress
-        max="5"
-        value={currentIndex}
-        className="progress__tag"
-      ></progress>
-    </div>
+    <ol className="progress">
+      <li data-step="1" className="is-complete">
+        Contact
+      </li>
+      <li data-step="2" className="is-complete">
+        Experience
+      </li>
+      <li data-step="3" className="is-complete">
+        Education
+      </li>
+      <li data-step="4" className="is-active">
+        Skills & languages
+      </li>
+      <li data-step="5" className="progress__last">
+        Objective
+      </li>
+    </ol>
   );
 }
 
-export default ProgressHeader;
+export default TestComponent;
