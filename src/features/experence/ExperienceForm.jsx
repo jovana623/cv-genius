@@ -7,12 +7,7 @@ import AddFormContainer from "../../ui/AddFormContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { addExperience, deleteExperence } from "./experienceSlice";
 
-const fieldNames = [
-  "Title/Position",
-  "Company",
-  "Location (City/State)",
-  "Description",
-];
+const fieldNames = ["Job title", "Employer", "City", "Description"];
 
 function ExperenceForm() {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -24,23 +19,22 @@ function ExperenceForm() {
     dispatch(addExperience(data));
   }
 
+  function handleCancel() {
+    setIsFormVisible(false);
+  }
+
   function handleDelete(id) {
     dispatch(deleteExperence(id));
   }
 
   return (
     <div className="form__container">
-      <h1 className="form__container--title">
-        Great! Lets fill out your work experience next
-      </h1>
-      <p className="form__container--subtitle">
-        Start with your most recent position and work backwards. Just add the
-        most recent and relevant positions if you have lots of experience.
-      </p>
+      <h1 className="form__container--title">Experence</h1>
       {isFormVisible ? (
         <ExpEduFormPattern
           onSuccess={handleFormSubmit}
           fieldNames={fieldNames}
+          onCancel={handleCancel}
         />
       ) : (
         <div>

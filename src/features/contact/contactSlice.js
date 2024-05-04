@@ -5,11 +5,11 @@ const initialState = {
   lastName: "Stewart",
   occupation: "Backend developer",
   email: "example@gmail.com",
-  address: "1234 Market St, San Francisco, CA 94102",
   phone: "(415) 555-1234",
-  nationality: "American",
+  github: "github.com/isabella34",
   birthDate: "18 March 1995",
   linkedIn: "linkedin.com/isabella-stewart",
+  personalSite: "wwww.isabellasreward.com",
 };
 
 const contactSlice = createSlice({
@@ -28,20 +28,20 @@ const contactSlice = createSlice({
     changeEmail(state, action) {
       state.email = action.payload;
     },
-    changeAddress(state, action) {
-      state.address = action.payload;
-    },
     changePhone(state, action) {
       state.phone = action.payload;
     },
-    changeNationality(state, action) {
-      state.nationality = action.payload;
+    changeGithub(state, action) {
+      state.github = action.payload;
     },
     changeBirthDate(state, action) {
       state.birthDate = action.payload;
     },
     changeLinkedIn(state, action) {
       state.linkedIn = action.payload;
+    },
+    changePersonalSite(state, action) {
+      state.personalSite = action.payload;
     },
   },
 });
@@ -51,11 +51,11 @@ export const {
   changeLastName,
   changeOccupation,
   changeEmail,
-  changeAddress,
   changePhone,
-  changeNationality,
+  changeGithub,
   changeBirthDate,
   changeLinkedIn,
+  changePersonalSite,
 } = contactSlice.actions;
 
 export default contactSlice.reducer;

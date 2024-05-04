@@ -10,11 +10,28 @@
   }
 }
 
-.btn--add-fields {
-  border: none;
-  background-color: $color-white;
-  margin-bottom: 1rem;
-  color: $color-light-blue;
-  font-size: 1.6rem;
-  font-weight: 600;
+.additional_fields {
+  display: flex;
+  gap: 3rem;
+}
+
+.additional-input {
+  display: grid;
+  grid-template-columns: 15fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+
+  &__btn {
+    background-color: transparent;
+    position: absolute;
+    right: 0%;
+    top: 30%;
+    font-size: 2rem;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

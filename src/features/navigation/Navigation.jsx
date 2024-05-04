@@ -2,6 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../styles/components/Navigation.scss";
 import { nextRoute, prevRoute } from "./navigationSlice";
 import { NavLink } from "react-router-dom";
+import {
+  MdKeyboardDoubleArrowRight,
+  MdKeyboardDoubleArrowLeft,
+} from "react-icons/md";
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -21,14 +25,15 @@ function Navigation() {
   return (
     <div className="nav">
       <NavLink to={currentRoute}>
-        <button className="nav__btn--prev" onClick={handlePrevClick}>
-          &#8592; Previous
+        <button className="nav__btn" onClick={handlePrevClick}>
+          <MdKeyboardDoubleArrowLeft />
+          <span> Previous</span>
         </button>
       </NavLink>
 
       <NavLink to={currentRoute}>
-        <button className="nav__btn--next" onClick={handleNextClick}>
-          Next &#8594;
+        <button className="nav__btn" onClick={handleNextClick}>
+          <span>Next</span> <MdKeyboardDoubleArrowRight />
         </button>
       </NavLink>
     </div>

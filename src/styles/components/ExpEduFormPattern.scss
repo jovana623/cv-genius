@@ -1,25 +1,46 @@
 @import "../abstract/variables.scss";
 
-.btn__submit--container {
+.btn-container {
   display: flex;
   justify-content: flex-end;
-}
+  gap: 0.8rem;
 
-.btn__submit {
-  background-color: $color-white;
-  border: none;
-  text-transform: uppercase;
-  color: $color-light-blue;
-  padding: 0.8rem 1.6rem;
-  border: 1px solid $color-light-blue;
-  border-radius: 2rem;
-  font-size: 1.6rem;
-  margin-left: auto;
+  &__cancel {
+    background-color: transparent;
+    border: 1px solid $color-iron-gray;
+    font-size: 2rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    color: $color-iron-gray;
+    transition: all $animation-duration;
 
-  &:hover {
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color-light-blue, 0.05);
+      color: $color-black;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: $color-white;
+    text-transform: uppercase;
     background-color: $color-light-blue;
-    cursor: pointer;
+    padding: 0.8rem 1.6rem;
+    border: 1px solid $color-light-blue;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all $animation-duration;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-dark-blue-1;
+      border: 1px solid $color-dark-blue-1;
+    }
   }
 }
 

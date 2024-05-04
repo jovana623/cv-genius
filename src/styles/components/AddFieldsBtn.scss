@@ -1,0 +1,23 @@
+@import "../abstract/variables.scss";
+
+.add__fields {
+  margin: 2rem 0;
+}
+
+.add__fields--btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: $color-white;
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  border: 1px solid $color-light-blue;
+  color: $color-light-blue;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-light-blue;
+    cursor: pointer;
+  }
+}

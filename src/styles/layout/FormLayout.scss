@@ -5,12 +5,31 @@
   padding-top: 1rem;
   padding-right: 10rem;
   padding-bottom: 20rem;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  height: 86dvh;
+
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-slate-gray;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-light-gray;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $color-steel-gray;
+  }
 
   &--title {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: $color-dark-gray;
-    font-size: 3.4rem;
+    font-size: 3rem;
   }
 
   &--subtitle {

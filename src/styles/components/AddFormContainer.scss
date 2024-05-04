@@ -3,7 +3,7 @@
 .add__container {
   margin-top: 2rem;
   width: 100%;
-  border: 1px dashed $color-light-blue;
+  border: none;
 
   &--btn {
     display: flex;
@@ -12,14 +12,15 @@
     padding: 2rem;
     color: $color-light-blue;
     text-align: left;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-weight: 400;
+    font-size: 1.6rem;
     align-items: center;
     border: none;
     gap: 1rem;
 
     &:hover {
       cursor: pointer;
+      background-color: rgba($color-light-blue, 0.05);
     }
   }
 }

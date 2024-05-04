@@ -6,9 +6,11 @@ import { v4 as uuidv4 } from "uuid";
 import InputField from "../ui/InputField";
 import Textarea from "./Textarea";
 import { useState } from "react";
+import { CiTrash } from "react-icons/ci";
+import { IoMdCheckmark } from "react-icons/io";
 
 /* eslint-disable react/prop-types */
-function ExpEduFormPattern({ fieldNames, onSuccess }) {
+function ExpEduFormPattern({ fieldNames, onSuccess, onCancel }) {
   const { register, handleSubmit } = useForm();
   const [checkPresent, setCheckPresent] = useState(false);
 
@@ -59,9 +61,17 @@ function ExpEduFormPattern({ fieldNames, onSuccess }) {
       </div>
       <Textarea name="description" label={fieldNames[3]} register={register} />
 
-      <div className="btn__submit--container">
-        <button type="submit" className="btn__submit">
-          Save
+      <div className="btn-container">
+        <button
+          type="cancel"
+          className="btn-container__cancel"
+          onClick={onCancel}
+        >
+          <CiTrash />
+        </button>
+        <button type="submit" className="btn-container__submit">
+          <IoMdCheckmark />
+          <span>Done</span>
         </button>
       </div>
     </form>

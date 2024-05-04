@@ -2,35 +2,33 @@ import "../../styles/layout/FormLayout.scss";
 import "../../styles/components/ContactForm.scss";
 import "../../styles/layout/InputFieldLayout.scss";
 import { useState } from "react";
-import AdditionalFields from "./AdditionalFields";
 import { useDispatch } from "react-redux";
 import {
-  changeAddress,
+  changeBirthDate,
   changeEmail,
   changeFirstName,
+  changeGithub,
   changeLastName,
+  changeLinkedIn,
   changeOccupation,
+  changePersonalSite,
   changePhone,
 } from "./contactSlice";
 import InputField from "../../ui/InputField";
+import AddFieldsBtn from "./AddFieldBtn";
+import CalendarField from "../../ui/CalendarField";
+import { CiTrash } from "react-icons/ci";
 
 function ContactForm() {
-  const [showAdditionalField, setShowAdditionalFields] = useState(false);
+  const [showGithubField, setShowGithubField] = useState(false);
+  const [showbirthDateField, setShowBirthDateField] = useState(false);
+  const [showSiteField, setShowSiteField] = useState(false);
 
   const dispatch = useDispatch();
-
-  function handleAdditionalFieldsToggle(e) {
-    e.preventDefault();
-    setShowAdditionalFields((isOpen) => !isOpen);
-  }
 
   return (
     <form className="form__container">
       <h1 className="form__container--title">Give a brief self-introduction</h1>
-      <p className="form__container--subtitle">
-        Tell us a bit about yourself, how employers can contact you, and what
-        you do for a living.
-      </p>
       <div className="details">
         <div className="details__name">
           <InputField
@@ -48,20 +46,15 @@ function ContactForm() {
       </div>
       <InputField
         name="occupation"
-        label="Occupation"
+        label="Professional title"
         onChange={(value) => dispatch(changeOccupation(value))}
-      />
-      <InputField
-        name="email"
-        label="Email"
-        onChange={(value) => dispatch(changeEmail(value))}
       />
 
       <div className="form__container--two-rows">
         <InputField
-          name="address"
-          label="Address"
-          onChange={(value) => dispatch(changeAddress(value))}
+          name="email"
+          label="Email"
+          onChange={(value) => dispatch(changeEmail(value))}
         />
         <InputField
           name="phone"
@@ -69,15 +62,80 @@ function ContactForm() {
           onChange={(value) => dispatch(changePhone(value))}
         />
       </div>
-      <button
-        onClick={(e) => handleAdditionalFieldsToggle(e)}
-        className="btn--add-fields"
-      >
-        {showAdditionalField
-          ? "Hide additional fields \u2191"
-          : "Open additional fields \u2193"}
-      </button>
-      {showAdditionalField && <AdditionalFields />}
+      <InputField
+        name="linkedin"
+        label="LinkedIn"
+        onChange={(value) => dispatch(changeLinkedIn(value))}
+      />
+      <div className="form__container--two-rows">
+        {showGithubField && (
+          <div className="additional-input">
+            <InputField
+              name="github"
+              label="Github"
+              onChange={(value) => dispatch(changeGithub(value))}
+            />
+            <button
+              className="additional-input__btn"
+              onClick={() => setShowGithubField(false)}
+            >
+              <CiTrash />
+            </button>
+          </div>
+        )}
+        {showbirthDateField && (
+          <div className="additional-input">
+            <CalendarField
+              name="birthday"
+              onChange={(value) => dispatch(changeBirthDate(value))}
+            >
+              Birthday
+            </CalendarField>
+            <button
+              className="additional-input__btn"
+              onClick={() => setShowBirthDateField(false)}
+            >
+              <CiTrash />
+            </button>
+          </div>
+        )}
+      </div>
+      <div>
+        <div className="form__container--two-rows">
+          {showSiteField && (
+            <div className="additional-input">
+              <InputField
+                name="personalSite"
+                label="Personal Site"
+                onChange={(value) => dispatch(changePersonalSite(value))}
+              />
+              <button
+                className="additional-input__btn"
+                onClick={() => setShowSiteField(false)}
+              >
+                <CiTrash />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="additional_fields">
+        {!showGithubField && (
+          <AddFieldsBtn
+            text="Github"
+            onClick={() => setShowGithubField(true)}
+          />
+        )}
+        {!showbirthDateField && (
+          <AddFieldsBtn
+            text="Birth date"
+            onClick={() => setShowBirthDateField(true)}
+          />
+        )}
+        {!showSiteField && (
+          <AddFieldsBtn text="Website" onClick={() => setShowSiteField(true)} />
+        )}
+      </div>
     </form>
   );
 }
