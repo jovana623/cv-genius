@@ -6,6 +6,7 @@ import ExperienceForm from "./features/experence/ExperienceForm";
 import EducationForm from "./features/education/EducationForm";
 import SkillsLanguageForm from "./features/skills/SkillsLanguageForm";
 import ObjectiveForm from "./features/objective/ObjectiveForm";
+import Preview from "./pages/Preview";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/skills&languages" element={<SkillsLanguageForm />} />
           <Route path="/objective" element={<ObjectiveForm />} />
         </Route>
+        <Route path="/preview" element={<Preview />} />
       </Routes>
     </BrowserRouter>
   );

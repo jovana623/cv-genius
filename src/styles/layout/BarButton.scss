@@ -1,0 +1,33 @@
+@import "../abstract/variables.scss";
+
+.font-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  transition: all $focus-duration;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color-light-blue, 0.1);
+    border: 1px solid $color-light-blue;
+  }
+
+  &__select {
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

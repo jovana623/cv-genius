@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
+import { IoExpandOutline } from "react-icons/io5";
 import "../../styles/components/PreviewButton.scss";
 
 function PreviewButton() {
   return (
-    <NavLink to="#" className="link">
+    <NavLink to="/preview" className="link">
       <button className="preview__btn">
         <div className="preview__btn--icon">
-          <FaEye />
+          <IoExpandOutline />
         </div>
         <span className="preview__btn--text">Preview</span>
       </button>
