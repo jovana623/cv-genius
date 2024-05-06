@@ -6,6 +6,7 @@ import educationReducer from "../features/education/educationSlice";
 import skillsReducer from "../features/skills/skillsSlice";
 import languageReducer from "../features/languages/languageSlice";
 import objectiveReducer from "../features/objective/objectiveSlice";
+import fontReducer from "../features/preview/fontSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     skills: skillsReducer,
     language: languageReducer,
     objective: objectiveReducer,
+    font: fontReducer,
   },
 });

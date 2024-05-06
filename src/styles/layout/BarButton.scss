@@ -22,6 +22,10 @@
     border: none;
     background-color: transparent;
 
+    & option {
+      padding: 0.5rem 1rem; /* Adjust padding as needed */
+    }
+
     &:hover {
       cursor: pointer;
     }

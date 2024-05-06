@@ -6,14 +6,26 @@ import ObjectiveInformations from "../objective/ObjectiveInformations";
 import SkillsInformations from "../skills/SkillsInformations";
 import ResumeHeader from "../contact/Profile";
 import EducationInformations from "../education/EducationInformations";
+import { useSelector } from "react-redux";
 
 function Resume() {
+  const { lineHeight, fontSize, fontFamily } = useSelector(
+    (state) => state.font
+  );
+  console.log(fontFamily);
   return (
     <div className="resume">
       <div>
         <ResumeHeader />
       </div>
-      <div className="resume__main-info">
+      <div
+        className="resume__main-info"
+        style={{
+          lineHeight: lineHeight,
+          fontSize: fontSize + "px",
+          fontFamily: fontFamily,
+        }}
+      >
         <div className="resume__side--left">
           <ContactInformations />
           <SkillsInformations />
