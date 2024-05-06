@@ -14,7 +14,7 @@ function Resume() {
   );
   console.log(fontFamily);
   return (
-    <div className="resume">
+    <div className="resume" id="resume">
       <div>
         <ResumeHeader />
       </div>

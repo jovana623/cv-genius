@@ -1,0 +1,19 @@
+@import "../abstract/variables.scss";
+
+.download_btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border-radius: 0.8rem;
+  border: 1px solid $color-light-blue;
+  color: $color-light-blue;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+
+  &:hover {
+    background-color: $color-light-blue;
+    color: $color-white;
+    cursor: pointer;
+  }
+}
