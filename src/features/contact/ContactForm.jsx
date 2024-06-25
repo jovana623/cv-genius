@@ -18,6 +18,7 @@ import InputField from "../../ui/InputField";
 import AddFieldsBtn from "./AddFieldBtn";
 import CalendarField from "../../ui/CalendarField";
 import { CiTrash } from "react-icons/ci";
+import Photo from "./Photo";
 
 function ContactForm() {
   const [showGithubField, setShowGithubField] = useState(false);
@@ -42,7 +43,7 @@ function ContactForm() {
             onChange={(value) => dispatch(changeLastName(value))}
           />
         </div>
-        <div>Profile photo</div>
+        <Photo />
       </div>
       <InputField
         name="occupation"
