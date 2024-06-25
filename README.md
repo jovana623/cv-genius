@@ -31,13 +31,13 @@ The CV Generator is a React-based application that helps users create profession
 - Fast and efficient development with Vite.
 
 ## Screenshots
-### Home Page
-![Home Page](./screenshots/languages.png)
-
-### CV Form
-![CV Form](./screenshots/form.png)
+### Form
+![Skills](https://raw.githubusercontent.com/jovana623/cv-genius/master/public/skills.png)
+###Languages
+![Languages](https://raw.githubusercontent.com/jovana623/cv-genius/master/public/languages.png)
 ### Preview
-![Preview](./screenshots/preview.png)
+![Preview](https://raw.githubusercontent.com/jovana623/cv-genius/master/public/preview.png)
+
 
 
 
