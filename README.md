@@ -33,6 +33,7 @@ The CV Generator is a React-based application that helps users create profession
 ## Screenshots
 ### Home Page
 ![Home Page](./screenshots/languages.png)
+
 ### CV Form
 ![CV Form](./screenshots/form.png)
 ### Preview
